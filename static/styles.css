@@ -27,6 +27,15 @@ nav{
     height: 100%;
 }
 
+.active{
+    font-weight: 600;
+    border-bottom: 2px solid rgb(134, 102, 61);
+}
+
+.active:hover{
+    pointer-events: none !important;
+}
+
 .nav-logo-container{
     height:100%;
     width:auto;
@@ -64,6 +73,7 @@ nav>ul>li:hover{
     scale: 1.1;
     transition: 0.2s;
 }
+
 
 nav>ul>li>a{
     text-decoration: none;
