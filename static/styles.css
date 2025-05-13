@@ -99,7 +99,7 @@ nav>ul>li>a{
     display:flex;
     height:75vh;
     width: 100%;
-    gap:100px;
+    gap:200px;
     align-items: center;
     justify-content: center;
 }
@@ -109,8 +109,9 @@ nav>ul>li>a{
 
 .herobanner-img{
     width:100%;
-    border-radius:100px 25px 100px 25px;
+    border-radius:225px 25px 150px 25px;
 }
+
 
 .img-round-border{
     padding:5%;
