@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<section>
+   
+    <h2>Nos services</h2>
+    <p>Chez START PUP, nous mettons un point d’honneur à offrir des prestations complètes, adaptées aux besoins spécifiques de chaque animal, qu’il s’agisse d’un chien, d’un chat ou d’un NAC (nouvel animal de compagnie). Découvrez notre gamme de soins :</p>
+    <div class="d-flex gap-5"> 
+        {% for formula in formulas%}
+        <div class="card p-5 ">
+            <h5>{{formula.title}}</h5>
+            <ul>
+                {% if formula.features|length > 0 %}
+                {% for f in formula.features[0]%}
+                <li>{{f}}</li>
+                {%endfor%}
+                {%else%}
+                <p> Pas de features pour les plouc !</p>
+                {%endif%}
+            </ul>
+        </div>
+        
+        {%endfor%}
+    </div>
+
+</section>
+
+{%endblock%}

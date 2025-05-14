@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services>
+  <package id="essential">
+    <title>Formule Essentielle</title>
+    <description>Le soin de base pour un compagnon propre et soigné</description>
+    <first_feature>Bain doux avec shampooing adapté</first_feature>
+    <second_feature>Séchage manuel et souffleur</second_feature>
+    <third_feature>Taille des griffes</third_feature>
+    <fourth_feature>Nettoyage des oreilles et des yeux</fourth_feature>
+    <price>25</price>
+    <note>Idéal pour un entretien régulier</note>
+  </package>
+
+  <package id="comfort">
+    <title>Formule Confort</title>
+    <description>Pour un toilettage complet et stylé</description>
+    <first_feature>Tous les soins de la Formule Essentielle</first_feature>
+    <second_feature>Démêlage en profondeur</second_feature>
+    <third_feature>Coupe ou tonte personnalisée (standard ou stylée)</third_feature>
+    <fourth_feature>Soin du pelage (anti-nœuds ou nourrissant)</fourth_feature>
+    <price>40</price>
+    <note>Parfait pour les poils longs ou denses</note>
+  </package>
+
+  <package id="wellness">
+    <title>Formule Bien-Être</title>
+    <description>Un moment cocooning pour votre animal préféré</description>
+    <first_feature>Tous les soins de la Formule Confort</first_feature>
+    <second_feature>Massage relaxant</second_feature>
+    <third_feature>Accessoires (nœud papillon, bandana, parfum léger)</third_feature>
+    <fourth_feature>Photo souvenir offerte</fourth_feature>
+    <price>55</price>
+    <note>L’expérience premium pour chouchouter votre compagnon</note>
+  </package>
+</services>
