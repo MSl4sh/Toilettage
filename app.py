@@ -1,15 +1,11 @@
 from flask import Flask, render_template, redirect, url_for, request
 import psycopg2
-# Data-base connection
-import sqlalchemy
 
 app = Flask(__name__)
 
 def db_conn():
-    conn = psycopg2.connect(host="localhost", dbname="toiletries", user="postgres", password="Ennyfrans1984",
-                            port=5432)
+    conn = psycopg2.connect(host="localhost", dbname="Toiletries", user="postgres", password="Postgre", port=5432)
     return conn
-
 
     
 @app.route("/")
@@ -19,6 +15,14 @@ def default():
 @app.route("/home")
 def home():
     return render_template("home.html")
+
+@app.route("/services")
+def services():
+    return render_template("services.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 @app.route("/reservation")
 def reservation():

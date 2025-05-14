@@ -13,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -40,7 +40,7 @@
     &quot;Python.app.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;enny__branch&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Xavier&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/s_13508_dev/Desktop/Python/Toilettage&quot;
   }
 }</component>
