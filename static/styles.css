@@ -117,3 +117,11 @@ nav>ul>li>a{
     border: 2px solid rgb(134, 102, 61);
     border-radius: 100%;
 }
+
+.s-border{width: fit-content;
+  border: 2px solid grey;
+  background-color: khaki;
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+}
