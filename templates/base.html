@@ -18,7 +18,7 @@
                 <div class="nav-logo-container">
                     <img src="{{url_for('static', filename='/img/logo.svg')}}" alt="logo">
                 </div>
-                <p class="nav-name">STAR PUP</h2>
+                <h2 class="nav-name">STAR PUP</h2>
             </div>
             <ul>
                 <li><a class="nav-link" href="/home">Accueil</a></li>
@@ -29,8 +29,8 @@
         </nav>
     </header>
     <main>
-        {%block content%}
-        {%endblock%}
+        {% block content %}
+        {% endblock %}
     </main>
 </body>
 
