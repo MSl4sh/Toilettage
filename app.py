@@ -3,13 +3,8 @@ import psycopg2
 import xml.etree.ElementTree as ET
 from formulas import Formula
 
-
-
 app = Flask(__name__)
 
-
-
-    
 @app.route("/")
 def default():
     return redirect("/home")
@@ -25,19 +20,13 @@ def services():
     
     formulas = []
     
-    
     for package_elem in root.findall('package'):
         package_id = package_elem.get('id')
         title = package_elem.find('title').text
         description = package_elem.find('description').text
         price = package_elem.find('price').text
         note = package_elem.find('note').text
-        features =[]
-        features.append(package_elem.find('first_feature').text)
-        features.append(package_elem.find('second_feature').text)
-        features.append(package_elem.find('third_feature').text)
-        features.append(package_elem.find('fourth_feature').text)
-        print(package_elem.find('first_feature').text)
+        features = [f.text for f in package_elem.findall('feature')]
         formula = Formula(
             package=package_id,
             title=title,

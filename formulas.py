@@ -3,7 +3,7 @@ class Formula:
         self.package=package
         self.title=title
         self.description=description
-        self.features=features,
+        self.features=features
         self.price=price
         self.note=note
         
