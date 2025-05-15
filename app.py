@@ -1,7 +1,5 @@
 from flask import Flask, render_template, redirect, url_for, request
 import psycopg2
-# Data-base connection
-import psycopg2
 import xml.etree.ElementTree as ET
 from formulas import Formula
 
@@ -87,14 +85,18 @@ def reservation():
 
     if request.method == 'POST':
         conn = db_conn()
-
-        formula_id = request.form.get('formula')
+        cur = conn.cursor()
+        #formula_id = request.form.get('formula_id')
+        #for test i put formula_id = 1
+        formula_id = 1
         lastname = request.form.get('lastname')
         firstname = request.form.get('firstname')
         date = request.form.get('date')
         time = request.form.get('time')
-
-
+        cur.execute('''INSERT INTO reservation(id_traitment, lastname, firstname) VALUES(%s,%s,%s)''', (formula_id,lastname,firstname))
+        conn.commit()
+        cur.close()
+        conn.close()
     formula_id = request.args.get('formula_id')
     
     formulas = get_formulas()
