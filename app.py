@@ -1,5 +1,4 @@
 from flask import Flask, render_template, redirect, url_for, request
-# Data-base connection
 import psycopg2
 import xml.etree.ElementTree as ET
 from formulas import Formula
@@ -9,7 +8,7 @@ app = Flask(__name__)
 
 # à remplacer par vos identifiants et votre nom de Db étant donné qu'on a pas tous le meme
 def db_conn():
-    conn = psycopg2.connect(host="localhost", dbname="Toiletries", user="postgres", password="sQlpWd25",
+    conn = psycopg2.connect(host="localhost", dbname="toiletries", user="postgres", password="Ennyfrans1984",
                             port=5432)
     return conn
 
@@ -56,10 +55,6 @@ def services():
 
     return render_template('services.html', formulas=formulas)
 
-@app.route("/about")
-def about():
-    return render_template("about.html")
-
 @app.route("/test")
 def test():
     conn = psycopg2.connect(
@@ -90,14 +85,18 @@ def reservation():
 
     if request.method == 'POST':
         conn = db_conn()
-
-        formula_id = request.form.get('formula')
+        cur = conn.cursor()
+        #formula_id = request.form.get('formula_id')
+        #for test i put formula_id = 1
+        formula_id = 1
         lastname = request.form.get('lastname')
         firstname = request.form.get('firstname')
         date = request.form.get('date')
         time = request.form.get('time')
-
-
+        cur.execute('''INSERT INTO reservation(id_traitment, lastname, firstname) VALUES(%s,%s,%s)''', (formula_id,lastname,firstname))
+        conn.commit()
+        cur.close()
+        conn.close()
     formula_id = request.args.get('formula_id')
     
     formulas = get_formulas()
