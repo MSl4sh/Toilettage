@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --primary: #6B4F2B;      /* Marron foncé */
-    --secondary: #A3B7B6;    /* Bleu-gris doux */
-    --accent: #ebdaba;       /* Doré doux */
-    --bg-light: #F6F1E7;     /* Beige clair */
-    --bg-card: #FCFAF7;      /* Blanc cassé */
-    --bg-header: #E9DFCF;    /* Beige foncé */
-    --text-dark: #6B4F2B;    /* Marron foncé */
-    --text-light: #8B7B6B;   /* Marron clair */
+    --primary: #6B4F2B;      
+    --secondary: #A3B7B6;    
+    --accent: #ebdaba;       
+    --bg-light: #F6F1E7;     
+    --bg-card: #FCFAF7;      
+    --bg-header: #E9DFCF;    
+    --text-dark: #6B4F2B;    
+    --text-light: #8B7B6B;   
 }
 
 body {
@@ -68,7 +68,7 @@ body {
     transform: translateY(-2px) scale(1.2);
 }
 
-/* BOUTONS */
+/* BUTTONS */
 .btn-primary {
     background: var(--secondary);
     color: var(--primary);
@@ -117,7 +117,7 @@ body {
     transform: translateY(-4px) scale(1.01);
 }
 
-/* LISTES AVEC PATTES */
+/* LISTS WITH PAWS */
 .paw-bullet {
     width: 20px;
     height: 20px;
@@ -131,7 +131,7 @@ body {
     color: var(--primary);
 }
 
-/* HERO & TITRES */
+/* HERO & TITLE */
 .hero-section {
     background: var(--bg-light);
     min-height: 100vh;
@@ -150,7 +150,7 @@ body {
     font-size: 1.15rem;
 }
 
-/* CTA */
+/* CALL TO ACTIONS */
 .cta-section {
     background: var(--accent);
     color: var(--primary);
