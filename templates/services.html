@@ -29,7 +29,7 @@
                     </ul>
                 </div>
                 <div class="card-footer bg-white border-top-0 text-center d-flex flex-column align-items-center">
-                    <a href="#" class="btn btn-primary mb-2 w-100">Choisir cette formule</a>
+                    <a href="{{ url_for('reservation', formula_id=formula.id) }}" class="btn btn-primary mb-2 w-100">Choisir cette formule</a>
                     <small class="text-muted">{{formula.note}}</small>
                 </div>
             </div>
@@ -37,12 +37,4 @@
         {% endfor %}
     </div>
 </section>
-
-<style>
-.hover-shadow:hover {
-    transform: translateY(-5px);
-    transition: all 0.3s ease;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
-}
-</style>
 {%endblock%}

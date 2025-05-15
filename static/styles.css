@@ -182,6 +182,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
+<<<<<<< HEAD
 /* Responsive */
 @media (max-width: 991.98px) {
     .navbar-collapse {
@@ -206,4 +207,18 @@ body {
     .hero-section h1 {
         font-size: 2.2rem;
     }
+=======
+.img-round-border{
+    padding:5%;
+    border: 2px solid rgb(134, 102, 61);
+    border-radius: 100%;
+}
+
+.s-border{width: fit-content;
+  border: 2px solid grey;
+  background-color: khaki;
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+>>>>>>> origin/develop
 }
