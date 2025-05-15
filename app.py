@@ -84,23 +84,36 @@ def book():
     conn.close()
     return redirect(url_for('reservation'))
 
+@app.route('/thanks')
+def thanks():
+    return render_template("thanks_for_book.html")
+
+
 @app.route('/reservation', methods=['GET', 'POST'])
 def reservation():
 
     if request.method == 'POST':
         conn = db_conn()
         cur = conn.cursor()
-        #formula_id = request.form.get('formula_id')
-        #for test i put formula_id = 1
-        formula_id = 1
+        formula_id = request.form.get('formula')
+        if formula_id=="essential":
+            price = 25
+        elif formula_id=="comfort":
+            price = 40
+        else: price = 50
+        print(price)
         lastname = request.form.get('lastname')
         firstname = request.form.get('firstname')
         date = request.form.get('date')
+        phone = request.form.get('phone')
         time = request.form.get('time')
-        cur.execute('''INSERT INTO reservation(id_traitment, lastname, firstname) VALUES(%s,%s,%s)''', (formula_id,lastname,firstname))
+        time = date+' '+time
+        cur.execute('''INSERT INTO reservation(formula, lastname, firstname,phone,price,date,hour) VALUES(%s,%s,%s,%s,%s,%s,%s)''', (formula_id,lastname,firstname,phone,price,date,time))
         conn.commit()
         cur.close()
         conn.close()
+        return redirect(url_for('thanks'))
+
     formula_id = request.args.get('formula_id')
     
     formulas = get_formulas()
