@@ -1,54 +1,40 @@
-{% extends 'base.html' %}
+{%extends 'base.html'%}
 
-{% block content %}
-<div class="text-center">
-    <h1>Nos Services</h1>
-</div>
+{%block content%}
+<section class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold primary-text">Nos Services</h1>
+        <p class="lead text-muted">Chez START PUP, nous mettons un point d'honneur à offrir des prestations complètes, adaptées aux besoins spécifiques de chaque animal, qu'il s'agisse d'un chien, d'un chat ou d'un NAC (nouvel animal de compagnie).</p>
+    </div>
 
-<div class="s-border">
-    <h5>Le toilettage comprend :</h5>
-    <p>Coupe des ongles, nettoyage des oreilles, coussinets, bas-ventre et zone hygiènes,<br/>
-        vérification des glandes anales, bain avec shampoing adapté,<br/>
-        brushing et enfin une petite douche de parfum<br/>
-    </p>
-    <p>Chien petite taille (ex : Bichon, Shi tzu...)<br/>
-        Bain Chien poils ras : 35,00 €*<br/>
-        Bain démêlage chien petit : 45,00 €*<br/>
-        (selon la longueur et l'état du poil)<br/>
-        Coupe tondeuse : 55,00 €*<br/>
-        Coupe ciseaux : 65,00 €*<br/>
-        Triming : 70,00 €*<br/>
-    </p>
-    <P>Chien moyen taille (ex : Border collies, Cocker...)<br/>
-        Bain Chien poils ras : 40,00 €*<br/>
-        Bain démêlage chien normal : 50,00 €*<br/>
-        (selon la longueur et l'état du poil)<br/>
-        Coupe tondeuse : 55,00 €*<br/>
-        Coupe ciseaux : 70,00 €*<br/>
-        Triming ou débourrage : 75,00 €*<br/>
-    </P>
-    <p>Chien grande taille (ex : Terre neuve, Saint-bernard...)<br/>
-        Bain poils ras : à partir de 50,00 €*<br/>
-        Bain démêlage : entre 55,00 € et 65,00 €*<br/>
-        (selon la longueur et l'état du poil)<br/>
-        Coupe tondeuse : entre 60,00 € et 80,00 €*<br/>
-        Coupe ciseaux : entre 85,00 € et 120,00 €*<br/>
-        Triming ou débourrage : entre 85,00 € et 120,00 €*<br/>
-    </p>
-    <p>Chat<br/>
-        Bain démêlage ou tonte : 55,00 €<br/>
-        Démêlage ou tonte sans bain : 45,00 €<br/>
-    </p>
-    <P>Rongeurs/nac<br/>
-        bain + coupe Hamster : 25,00 €<br/>
-        bain + coupe Lapin : 35,00 €<br/>
-        bain + coupe Furet/Fouine : 45,00 €<br/>
-    </P>
-    <p>Autres soins<br/>
-        Coupe des ongles petit chien : 5,00 €<br/>
-        Coupe des ongles grand chien : 10,00 €<br/>
-        Shampooing anti puces : 5,00 €<br/>
-    </p>
-</div>
-
-{% endblock %}
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for formula in formulas %}
+        <div class="col">
+            <div class="card h-100 shadow-sm hover-shadow">
+                <div class="card-header bg-primary text-white text-center py-3">
+                    <h3 class="h4 mb-0">{{formula.title}}</h3>
+                </div>
+                <div class="card-body">
+                    <div class="text-center mb-4">
+                        <span class="display-6 fw-bold primary-text">{{formula.price}}€</span>
+                    </div>
+                    <p class="card-text text-muted mb-4">{{formula.description}}</p>
+                    <ul class="list-unstyled">
+                        {% for feature in formula.features %}
+                        <li class="mb-2 d-flex align-items-center">
+                            <img src="{{ url_for('static', filename='icons/paw.svg') }}" alt="puce patte" class="paw-bullet me-2">
+                            {{ feature }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="card-footer bg-white border-top-0 text-center d-flex flex-column align-items-center">
+                    <a href="{{ url_for('reservation', formula_id=formula.id) }}" class="btn btn-primary mb-2 w-100">Choisir cette formule</a>
+                    <small class="text-muted">{{formula.note}}</small>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{%endblock%}

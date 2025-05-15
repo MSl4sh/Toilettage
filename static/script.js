@@ -10,3 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  const navigate =(url)=>{
+  window.location.href = url
+}

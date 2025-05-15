@@ -1,37 +1,95 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Test to show the data</h1>
+<section class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white text-center py-3">
+                    <h2 class="h3 mb-0">Réservation</h2>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{{ url_for('reservation') }}" class="needs-validation" novalidate>
+                        <!-- Sélection de la formule -->
+                        <div class="mb-4">
+                            <label for="formula" class="form-label">Choisissez votre formule</label>
+                            <select class="form-select" id="formula" name="formula" required>
+                                <option value="" {% if not formula_id %}selected{% endif %} disabled>Sélectionnez une formule</option>
+                                {% for formula in formulas %}
+                                <option value="{{ formula.id }}" {% if formula_id == formula.id %}selected{% endif %}>{{ formula.title }} - {{ formula.price }}€</option>
+                                {% endfor %}
+                            </select>
+                            <div class="invalid-feedback">
+                                Veuillez sélectionner une formule.
+                            </div>
+                        </div>
 
-<h1>RESERVATION</h1>
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>client name/th>
-        <th>cost</th>
-        <th>Date and time</th>
-    </tr>
-    </thead>
-    <tbody>
-    {% for row in data %}
-    <tr>
-        <td>{{ row[0] }}</td>
-        <td>{{ row[1] }}</td>
-        <td>{{ row[2] }}</td>
-        <td>{{ row[3] }}</td>
-    </tr>
-    {% endfor %}
-    </tbody>
-</table>
+                        <!-- Nom et Prénom -->
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <label for="lastname" class="form-label">Nom</label>
+                                <input type="text" class="form-control" id="lastname" name="lastname" required>
+                                <div class="invalid-feedback">
+                                    Veuillez entrer votre nom.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="firstname" class="form-label">Prénom</label>
+                                <input type="text" class="form-control" id="firstname" name="firstname" required>
+                                <div class="invalid-feedback">
+                                    Veuillez entrer votre prénom.
+                                </div>
+                            </div>
+                        </div>
 
-<h2>Reservation form</h2>
-<form action="/book" method="post">
-    <input type="text" name="name" placeholder="Name">
-    <input type="text" name="price" placeholder="price">
-    <!--<input type="text" name="date_hour" placeholder="date_hour">-->
-    <input type="submit" value="Book">
-</form>
+                        <!-- Date et Heure -->
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <label for="date" class="form-label">Date souhaitée</label>
+                                <input type="date" class="form-control" id="date" name="date" required>
+                                <div class="invalid-feedback">
+                                    Veuillez sélectionner une date.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="time" class="form-label">Heure souhaitée</label>
+                                <input type="time" class="form-control" id="time" name="time" required>
+                                <div class="invalid-feedback">
+                                    Veuillez sélectionner une heure.
+                                </div>
+                            </div>
+                        </div>
 
+                        <!-- Bouton submit -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg px-5">
+                                Réserver
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!-- Script pour la validation du formulaire (pour emp^cher l'envoi du formulaire sur des champs sont vides :D ) -->
+<script>
+(function () {
+    'use strict'
+    var forms = document.querySelectorAll('.needs-validation')
+    Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+        }, false)
+    })
+})()
+
+// Empêcher la sélection de dates passées, on est pas dans retour vers le futur ici...
+document.getElementById('date').min = new Date().toISOString().split('T')[0];
+</script>
 {% endblock %}

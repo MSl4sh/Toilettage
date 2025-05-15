@@ -1,37 +1,71 @@
 {%extends 'base.html'%}
 
 {%block content%}
-<section class="herobanner">
-    <div class="w-30">
-        <h1 class="mb-5 name ">Bienvenu chez START PUP</h1>
-        <h5 class="mb-5">Parce que chaque compagnon mérite d’être choyé, notre salon accueille chiens, chats et nouveaux
-            animaux de
-            compagnie dans un espace chaleureux et apaisant. Du bain relaxant à la coupe stylée, nous allions douceur,
-            hygiène et savoir-faire pour que votre animal reparte heureux, propre et tout beau.
-        </h5>
-        <div class="d-flex justify-content-around">
-            <div class="w-25 d-flex flex-column align-items-center">
-                <div class="w-50 img-round-border mb-3">
-                    <img class="w-100" src="{{url_for('static', filename='/icons/bath.svg')}}" alt="">
-                </div>
-                <p class="subtitle">Toilettage complet</p>
+<section class="hero-section overflow-hidden">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-3 fw-bold primary-text mb-4">Bienvenue chez START PUP</h1>
+                <p class="lead text-muted mb-5">Parce que chaque compagnon mérite d'être choyé, notre salon accueille chiens, chats et nouveaux animaux de compagnie dans un espace chaleureux et apaisant. Du bain relaxant à la coupe stylée, nous allions douceur, hygiène et savoir-faire pour que votre animal reparte heureux, propre et tout beau.</p>
+                <a href="{{ url_for('services') }}" class="btn btn-primary btn-lg">Découvrir nos services</a>
             </div>
-            <div class="w-25 d-flex flex-column align-items-center">
-                <div class="w-50 img-round-border mb-3">
-                    <img class="w-100" src="{{url_for('static', filename='/icons/brush.svg')}}" alt="">
-                </div>
-                <p class="subtitle">Coiffe et coupe</p>
-            </div>
-            <div class="w-25 d-flex flex-column align-items-center">
-                <div class="w-50 img-round-border mb-3">
-                    <img class="w-100" src="{{url_for('static', filename='/icons/claw-cutter.svg')}}" alt="">
-                </div>
-                <p class="subtitle">Soin des griffes</p>
+            <div class="col-lg-6">
+                <img class="img-fluid rounded-5 shadow-lg w-75" src="{{url_for('static', filename='/img/herobanner.jpg')}}" alt="Salon de toilettage START PUP">
             </div>
         </div>
     </div>
-    <div class="w-25">
-        <img class="herobanner-img" src="{{url_for('static', filename='/img/herobanner.jpg')}}" alt="herobanner img">
+</section>
+
+
+<section class="services-section py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center display-5 fw-bold primary-text mb-5">Nos Services Principaux</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm hover-card">
+                    <div class="card-body text-center p-4">
+                        <div class="service-icon mb-4">
+                            <img class="service-img" src="{{url_for('static', filename='/icons/bath.svg')}}" alt="Toilettage">
+                        </div>
+                        <h3 class="h4 mb-3">Toilettage Complet</h3>
+                        <p class="text-muted">Un bain relaxant et un soin complet pour votre compagnon</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm hover-card">
+                    <div class="card-body text-center p-4">
+                        <div class="service-icon mb-4">
+                            <img class="service-img" src="{{url_for('static', filename='/icons/brush.svg')}}" alt="Coiffure">
+                        </div>
+                        <h3 class="h4 mb-3">Coiffe et Coupe</h3>
+                        <p class="text-muted">Une coupe sur mesure pour sublimer votre animal</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm hover-card">
+                    <div class="card-body text-center p-4">
+                        <div class="service-icon mb-4">
+                            <img class="service-img" src="{{url_for('static', filename='/icons/claw-cutter.svg')}}" alt="Soins des griffes">
+                        </div>
+                        <h3 class="h4 mb-3">Soin des Griffes</h3>
+                        <p class="text-muted">Un soin minutieux pour des griffes parfaites</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cta-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="display-5 fw-bold primary-text mb-4">Prêt à prendre rendez-vous ?</h2>
+                <p class="lead text-muted mb-4">Réservez dès maintenant un créneau pour votre compagnon</p>
+                <a href="/reservations" class="btn btn-primary btn-lg">Réserver maintenant</a>
+            </div>
+        </div>
     </div>
 </section>
 {%endblock%}
