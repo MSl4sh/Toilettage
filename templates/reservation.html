@@ -60,7 +60,7 @@
                             </div>
                         </div>
 
-                        <!-- Bouton de soumission -->
+                        <!-- Bouton submit -->
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary btn-lg px-5">
                                 Réserver
@@ -73,7 +73,7 @@
     </div>
 </section>
 
-<!-- Script pour la validation du formulaire -->
+<!-- Script pour la validation du formulaire (pour emp^cher l'envoi du formulaire sur des champs sont vides :D ) -->
 <script>
 (function () {
     'use strict'
@@ -89,7 +89,7 @@
     })
 })()
 
-// Empêcher la sélection de dates passées
+// Empêcher la sélection de dates passées, on est pas dans retour vers le futur ici...
 document.getElementById('date').min = new Date().toISOString().split('T')[0];
 </script>
 {% endblock %}
