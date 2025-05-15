@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="card-body text-center p-4">
+    <img src="/static/img/pets.jpg"
+         srcset="/static/img/pets.jpg 576w,
+                 /static/img/pets.jpg 768w,
+                 /static/img/pets.jpg 992w"
+         sizes="(min-width: 250px) 50vw , (min-width:500px) 25vw , 100vw"
+         alt="Pets">
+</div>
+
 <div class="card-body text-center p-5">
     <h1 class="display-4 fw-bold primary-text">Expérience</h1>
     <br/>
