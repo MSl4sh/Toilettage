@@ -1,5 +1,4 @@
 from flask import Flask, render_template, redirect, url_for, request
-import psycopg2
 # Data-base connection
 import psycopg2
 import xml.etree.ElementTree as ET
@@ -10,7 +9,7 @@ app = Flask(__name__)
 
 # à remplacer par vos identifiants et votre nom de Db étant donné qu'on a pas tous le meme
 def db_conn():
-    conn = psycopg2.connect(host="localhost", dbname="toiletries", user="postgres", password="Ennyfrans1984",
+    conn = psycopg2.connect(host="localhost", dbname="Toiletries", user="postgres", password="sQlpWd25",
                             port=5432)
     return conn
 
@@ -56,6 +55,10 @@ def services():
     formulas = get_formulas()
 
     return render_template('services.html', formulas=formulas)
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 @app.route("/test")
 def test():
