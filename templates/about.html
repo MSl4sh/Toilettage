@@ -1,30 +1,82 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="card-body text-center p-4">
-    <img src="/static/img/pets.jpg"
-         srcset="/static/img/pets.jpg 576w,
-                 /static/img/pets.jpg 768w,
-                 /static/img/pets.jpg 992w"
-         sizes="(min-width: 250px) 50vw , (min-width:500px) 25vw , 100vw"
-         alt="Pets">
-</div>
+<section class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <!-- Section Image -->
+            <div class="card shadow mb-4">
+                <div class="card-header bg-primary text-white text-center py-3">
+                    <h2 class="h3 mb-0">À Propos</h2>
+                </div>
+                <div class="card-body p-0">
+                    <img src="/static/img/pets.jpg"
+                         class="img-fluid w-100"
+                         style="max-height: 300px; object-fit: cover;"
+                         alt="Nos amis les animaux">
+                </div>
+            </div>
 
-<div class="card-body text-center p-4">
-    <h1 class="display-4 fw-bold primary-text">Expérience</h1>
-    <br/>
-    <br/>
-    <h5>Ma passion au quotidien<br/>
-        Diplomée d'une école privée de toilettage<br/>
-        Je propose des services de qualité et d'exellentes techniques de toilettage<br/>
-        J'utilise uniquement des produits professionnelles<br/>
-        Votre animal sera entre bonnes mains<br/>
-    <br/>
-    <br/>
-    </h5>
-    <h4>Pour plus de renseignements<br/>
-        rendez-vous chez Star Pup<br/>
-        Contact +32 499 99 99 99<br/>
-    </h4>
-</div>
+            <!-- Section Expérience -->
+            <div class="card shadow mb-4">
+                <div class="card-header bg-primary text-white text-center py-3">
+                    <h2 class="h3 mb-0">Notre Expertise</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-graduation-cap text-primary me-3 fa-2x"></i>
+                                <div>
+                                    <h5 class="mb-1">Formation Professionnelle</h5>
+                                    <p class="mb-0">Diplômée d'une école privée de toilettage</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-spa text-primary me-3 fa-2x"></i>
+                                <div>
+                                    <h5 class="mb-1">Services de Qualité</h5>
+                                    <p class="mb-0">Techniques de toilettage professionnelles</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-shampoo text-primary me-3 fa-2x"></i>
+                                <div>
+                                    <h5 class="mb-1">Produits Professionnels</h5>
+                                    <p class="mb-0">Utilisation exclusive de produits professionnels</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-heart text-primary me-3 fa-2x"></i>
+                                <div>
+                                    <h5 class="mb-1">Soins Attentionnés</h5>
+                                    <p class="mb-0">Votre animal sera entre de bonnes mains</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Contact -->
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white text-center py-3">
+                    <h2 class="h3 mb-0">Contact</h2>
+                </div>
+                <div class="card-body text-center">
+                    <p class="lead mb-3">Pour plus de renseignements, rendez-vous chez Star Pup</p>
+                    <a href="tel:+32499999999" class="btn btn-primary btn-lg">
+                        <i class="fas fa-phone-alt me-2"></i>+32 499 99 99 99
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
